@@ -5,8 +5,6 @@ import re
 from pathlib import Path
 from datetime import date
 
-
-# =========================================================
 # Week 1 Deliverable
 # - Concatenate all monthly files from January 2024 through
 #   the most recently completed calendar month(March)
@@ -14,7 +12,6 @@ from datetime import date
 # - Filter both to PropertyType == "Residential"
 # - Save as new CSVs
 # - Print row counts before and after concatenation/filtering
-# =========================================================
 
 # Use relative path:
 # this script should be saved in the main "IDX Exchange" folder
@@ -179,18 +176,16 @@ def combine_monthly_files(subfolder_path, file_pattern, output_name):
             print(f"  {Path(file).name}: {err}")
 
 
-# =========================================================
 # Build combined listings dataset
-# =========================================================
 combine_monthly_files(
     subfolder_path=LISTING_DIR,
     file_pattern="CRMLSListing*.csv",
     output_name="CRMLSListing_combined_residential.csv"
 )
 
-# =========================================================
+
 # Build combined sold dataset
-# =========================================================
+
 combine_monthly_files(
     subfolder_path=SOLD_DIR,
     file_pattern="CRMLSSold*.csv",
